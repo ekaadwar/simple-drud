@@ -17,16 +17,12 @@
           :image="product.image"
           :rating="product.rating"
           @onDelete="deleteProduct(product.id)"
+          @onEdit="editProduct(product)"
         />
       </div>
     </Container>
 
-    <FormProduct
-      :show="showForm"
-      :form="newProduct"
-      @close="showForm = false"
-      @submit="addProduct"
-    />
+    <FormProduct :show="showForm" :form="newProduct" @close="showForm = false" @submit="submit" />
   </main>
 </template>
 
@@ -41,6 +37,7 @@ type Rating = {
 }
 
 type Product = {
+  id: number
   title: string
   price: number
   description: string
@@ -52,9 +49,10 @@ type Product = {
 const productStore = useProductStore()
 const { products } = storeToRefs(productStore)
 
+const action = ref<string>('')
 const showForm = ref<boolean>(false)
-
 const newProduct = ref<Product>({
+  id: 0,
   title: '',
   price: 0,
   description: '',
@@ -66,14 +64,29 @@ const newProduct = ref<Product>({
   },
 })
 
-const addProduct = (form: Product) => {
-  const newId = products.value.length + 1
-  productStore.addProduct({
-    id: newId,
-    ...newProduct.value,
-  })
+const submit = (form: Product) => {
+  if (action.value === 'addProduct') {
+    const newId = products.value.length + 1
+    newProduct.value.id = newId
+    productStore.addProduct(newProduct.value)
+  } else if (action.value === 'editProduct') {
+    productStore.updateProduct(newProduct.value)
+  }
 
+  showForm.value = false
+}
+
+const editProduct = (form: Product) => {
+  console.log({ form })
+  action.value = 'editProduct'
+  newProduct.value = { ...form }
+  showForm.value = true
+}
+
+const formToogle = (): void => {
+  action.value = 'addProduct'
   newProduct.value = {
+    id: 0,
     title: '',
     price: 0,
     description: '',
@@ -81,12 +94,6 @@ const addProduct = (form: Product) => {
     image: '',
     rating: { rate: 0, count: 0 },
   }
-
-  showForm.value = false
-  console.log({ form })
-}
-
-const formToogle = (): void => {
   showForm.value = !showForm.value
 }
 

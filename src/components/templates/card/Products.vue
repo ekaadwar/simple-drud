@@ -26,7 +26,7 @@
       <Button :variant="'primary-navy'" @click="emit('onDelete')">
         <font-awesome-icon :icon="['fas', 'trash']" />
       </Button>
-      <Button :variant="'primary-yellow'">
+      <Button :variant="'primary-yellow'" @click="emit('onEdit')">
         <font-awesome-icon :icon="['fas', 'pen']" />
       </Button>
     </footer>
@@ -48,5 +48,5 @@ const props = defineProps<{
   }
 }>()
 
-const emit = defineEmits(['onDelete'])
+const emit = defineEmits(['onDelete', 'onEdit'])
 </script>
