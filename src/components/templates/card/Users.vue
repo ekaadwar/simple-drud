@@ -1,7 +1,7 @@
 <template>
   <Card>
     <header>
-      <img :src="`/public/images/users/${props.username}.jpg`" />
+      <img :src="`/images/users/${props.username}.jpg`" />
     </header>
 
     <main>
