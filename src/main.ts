@@ -22,6 +22,7 @@ import BlockModals from '@/components/blocks/modals/Index.vue'
 
 // custom templates
 import CardProducts from '@/components/templates/card/Products.vue'
+import CardUsers from '@/components/templates/card/Users.vue'
 import Navbar from '@/components/templates/navbar/Index.vue'
 import FormProduct from '@/components/templates/productShowoff/Form.vue'
 
@@ -44,6 +45,7 @@ app.component('BlockModals', BlockModals)
 
 // custom templates initial
 app.component('CardProducts', CardProducts)
+app.component('CardUsers', CardUsers)
 app.component('Navbar', Navbar)
 app.component('FormProduct', FormProduct)
 
