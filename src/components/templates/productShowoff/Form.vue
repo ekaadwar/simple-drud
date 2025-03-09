@@ -1,11 +1,13 @@
 <template>
-  <Modals :show="props.show"> Form </Modals>
+  <Modals :show="props.show" @close="emit('close')"> Form </Modals>
 </template>
 
 <script setup lang="ts">
-import Modals from '@/components/elements/cards/Modals.vue'
+import { defineEmits } from 'vue'
 
 const props = defineProps<{
   show: boolean
 }>()
+
+const emit = defineEmits(['close'])
 </script>

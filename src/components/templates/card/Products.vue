@@ -23,7 +23,7 @@
     </main>
 
     <footer>
-      <Button :variant="'primary-navy'">
+      <Button :variant="'primary-navy'" @click="emit('onDelete')">
         <font-awesome-icon :icon="['fas', 'trash']" />
       </Button>
       <Button :variant="'primary-yellow'">
@@ -34,6 +34,8 @@
 </template>
 
 <script setup lang="ts">
+import { defineEmits } from 'vue'
+
 const props = defineProps<{
   id: number
   title?: string
@@ -45,4 +47,6 @@ const props = defineProps<{
     count?: number
   }
 }>()
+
+const emit = defineEmits(['onDelete'])
 </script>

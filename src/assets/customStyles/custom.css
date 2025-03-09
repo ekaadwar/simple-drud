@@ -149,8 +149,32 @@ main.products .container .action {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  align-items: center;
+}
+
+.modals .modals-content {
+  background-color: var(--color-deep-red);
+  border-radius: 4px;
+  border: 2px solid var(--color-primary-yellow);
+  padding: 4px;
+  height: auto !important;
+  width: 369px;
+}
+
+.modals .modals-close {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+
+.modals .modals-close .icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0;
+}
+
+.modals .modals-close .icon:hover {
+  color: var(--color-primary-yellow);
 }
 
 .navbar {
