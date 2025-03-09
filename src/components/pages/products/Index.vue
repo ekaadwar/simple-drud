@@ -68,6 +68,7 @@ const submit = (form: Product) => {
   if (action.value === 'addProduct') {
     const newId = products.value.length + 1
     newProduct.value.id = newId
+    newProduct.value.image = '/images/products/additional_image.jpg'
     productStore.addProduct(newProduct.value)
   } else if (action.value === 'editProduct') {
     productStore.updateProduct(newProduct.value)
