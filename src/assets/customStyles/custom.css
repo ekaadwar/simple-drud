@@ -132,6 +132,24 @@ main.products .container .action {
   box-sizing: border-box;
 }
 
+.form-canvas {
+  padding: 16px;
+}
+
+.form-canvas,
+.form-canvas .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-canvas .form-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .grid-content {
   display: grid;
   gap: 20px;
@@ -139,6 +157,24 @@ main.products .container .action {
 }
 
 .grid-content div {
+  width: 100%;
+}
+
+.input-text label,
+.input-number label,
+.input-area label {
+  margin-bottom: 8px;
+}
+
+.input-text input,
+.input-number input,
+.input-area textarea {
+  padding: 12px 8px;
+  border-radius: 4px;
+  border: 0 !important;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
   width: 100%;
 }
 

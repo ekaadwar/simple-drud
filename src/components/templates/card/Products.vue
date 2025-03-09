@@ -1,7 +1,7 @@
 <template>
   <Card>
     <header>
-      <img :src="props.image" />
+      <img :src="props.image || '/src/assets/images/products/additional_image.jpg'" />
     </header>
 
     <main>

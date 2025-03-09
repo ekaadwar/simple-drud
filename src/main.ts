@@ -12,6 +12,9 @@ import Button from '@/components/elements/buttons/Index.vue'
 import Container from '@/components/elements/container/Index.vue'
 import Card from '@/components/elements/cards/Index.vue'
 // import CardModals from '@/components/elements/cards/Modals.vue'
+import InputText from '@/components/elements/input/InputText.vue'
+import InputNumber from '@/components/elements/input/InputNumber.vue'
+import InputArea from '@/components/elements/input/InputArea.vue'
 import Modals from '@/components/elements/modals/Index.vue'
 
 // custom blocks
@@ -30,6 +33,9 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('Button', Button)
 app.component('Container', Container)
 app.component('Card', Card)
+app.component('InputText', InputText)
+app.component('InputNumber', InputNumber)
+app.component('InputArea', InputArea)
 // app.component('CardModals', CardModals)
 app.component('Modals', Modals)
 
