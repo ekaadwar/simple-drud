@@ -1,0 +1,10 @@
+/* md */
+@media only screen and (min-width: 673px) {
+  .container {
+    max-width: 672px;
+  }
+
+  .grid-content {
+    grid-template-columns: auto auto;
+  }
+}

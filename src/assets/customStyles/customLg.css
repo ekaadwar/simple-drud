@@ -1,0 +1,10 @@
+/* lg */
+@media only screen and (min-width: 769px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .grid-content {
+    grid-template-columns: auto auto auto;
+  }
+}
